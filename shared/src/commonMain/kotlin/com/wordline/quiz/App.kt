@@ -11,7 +11,7 @@ import com.wordline.quiz.screens.ScoreScreen
 import com.wordline.quiz.screens.WelcomeScreen
 import com.wordline.quiz.screens.HistoryScreen
 
-import com.worldline.quiz.QuizViewModel
+import com.wordline.quiz.QuizViewModel
 import kotlinx.serialization.Serializable
 
 @Serializable

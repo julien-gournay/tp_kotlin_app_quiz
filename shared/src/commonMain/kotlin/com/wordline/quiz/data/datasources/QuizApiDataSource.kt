@@ -9,6 +9,8 @@ import io.ktor.http.*
 import io.ktor.serialization.kotlinx.json.*
 import kotlinx.serialization.json.Json
 
+expect val quizApiBaseUrl: String
+
 val globalHttpClient = HttpClient {
     engine {
 
@@ -33,6 +35,6 @@ val globalHttpClient = HttpClient {
 class QuizApiDatasource {
     private val httpClient = globalHttpClient
     suspend fun getAllQuestions(): Quiz {
-        return httpClient.get("https://juliengournay.fr/files/quiz.json").body()
+        return httpClient.get("$quizApiBaseUrl/files/quiz.json").body()
     }
 }

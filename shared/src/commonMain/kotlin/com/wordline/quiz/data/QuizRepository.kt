@@ -3,10 +3,7 @@ package com.wordline.quiz.data
 import com.wordline.quiz.data.dataclasses.HistoryEntry
 import com.wordline.quiz.data.dataclasses.Question
 import com.wordline.quiz.data.datasources.QuizApiDatasource
-import com.worldline.quiz.data.datasources.MockDataSource
-import kotlinx.datetime.Clock
-import kotlinx.datetime.TimeZone
-import kotlinx.datetime.toLocalDateTime
+import com.wordline.quiz.data.datasources.MockDataSource
 
 class QuizRepository()  {
 
@@ -32,12 +29,12 @@ class QuizRepository()  {
     }
 
     fun addHistoryEntry(score: Int, total: Int): Boolean {
+        // Vérifiez si le score actuel dépasse le score élevé précédent
         val isNewRecord = score > _highScore
         if (isNewRecord) {
             _highScore = score
         }
-        val now = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
-        val dateStr = "${now.dayOfMonth}/${now.monthNumber}/${now.year} ${now.hour}:${now.minute.toString().padStart(2, '0')}"
+        val dateStr = getCurrentDateString()
         _history.add(HistoryEntry(score, total, dateStr))
         return isNewRecord
     }

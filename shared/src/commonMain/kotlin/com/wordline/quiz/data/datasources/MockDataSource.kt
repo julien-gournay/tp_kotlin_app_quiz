@@ -1,4 +1,4 @@
-package com.worldline.quiz.data.datasources
+package com.wordline.quiz.data.datasources
 
 import com.wordline.quiz.data.dataclasses.Answer
 import com.wordline.quiz.data.dataclasses.Question

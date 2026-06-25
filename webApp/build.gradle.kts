@@ -21,8 +21,17 @@ kotlin {
     sourceSets {
         commonMain.dependencies {
             implementation(projects.shared)
-
             implementation(libs.compose.ui)
+        }
+        val jsMain by getting {
+            dependencies {
+                implementation(libs.kotlinx.datetime)
+            }
+        }
+        val wasmJsMain by getting {
+            dependencies {
+                implementation(libs.kotlinx.datetime)
+            }
         }
     }
 }

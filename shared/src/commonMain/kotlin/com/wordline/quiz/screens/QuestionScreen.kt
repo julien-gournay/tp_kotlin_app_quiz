@@ -75,6 +75,11 @@ fun QuestionScreen(questions: List<Question>, onFinishButtonPushed: (Int,Int) ->
             }
         }
         Column(modifier = Modifier.fillMaxHeight(), horizontalAlignment = Alignment.CenterHorizontally, verticalArrangement = Arrangement.Bottom) {
+            Text(
+                text = "${questionProgress + 1} / ${questions.size}",
+                fontSize = 16.sp,
+                modifier = Modifier.padding(bottom = 8.dp)
+            )
             Button(
                 modifier = Modifier.padding(bottom = 20.dp),
                 onClick = {

@@ -1,4 +1,4 @@
-package com.worldline.quiz
+package com.wordline.quiz
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
